@@ -1,0 +1,19 @@
+/out
+bin/
+build/
+/.vs
+.idea/
+CMakeSettings.json
+Makefile
+x64/
+
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.opendb
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+*.opensdf
+*.sdf
