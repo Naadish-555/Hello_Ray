@@ -3,7 +3,7 @@
 > Based on **Peter Shirley’s** “Ray Tracing in One Weekend.” Rendered outputs are kept in `output/`.
 
 ## Overview
-A simple C++ ray tracer: pinhole camera, spheres, shading, and image output (PPM). Next up: add metals, dielectrics (glass), anti-aliasing, and depth of field.
+A simple C++ ray tracer: camera, spheres, shading, and image output in PPM format.
 
 ## Building & Running (Visual Studio solution)
 1) Open the provided `.sln` in Visual Studio.
