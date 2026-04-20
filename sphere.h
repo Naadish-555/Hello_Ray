@@ -27,10 +27,10 @@ public:
 
 		//find nearest root that lies in acceptable range
 		auto root = (h - sqrtd) / a;					//first checking lower root
-		if (root <= ray_t.min || ray_t.max <= root)
+		if (!ray_t.surrounds(root))
 		{
 			root = (h + sqrtd) / a;						//if first root not in range then check the larger root
-			if (root <= ray_t.min || ray_t.max <= root)
+			if (!ray_t.surrounds(root))
 				return false;
 		}
 
