@@ -2,6 +2,7 @@
 #define CAMERA_H
 
 #include "hittable.h"
+#include "material.h"
 
 class camera
 {
@@ -95,9 +96,15 @@ private:
 			//vec3 direction = random_on_hemisphere(rec.normal);
 
 			///lmabertian distribution = reflected ray most likely to scatter in a dxn near surface normal and less likely to scatter in directions away from the normal.
-			vec3 direction = rec.normal + random_unit_vector();
+			//vec3 direction = rec.normal + random_unit_vector();
 
-			return 0.15 * ray_color(ray(rec.p, direction), depth - 1, world);
+			ray scattered;
+			color attenuation;
+			if (rec.mat->scatter(r, rec, attenuation, scattered))
+				return attenuation * ray_color(scattered, depth - 1, world);
+			return color(0, 0, 0);
+
+			//return 0.15 * ray_color(ray(rec.p, direction), depth - 1, world);
 		}
 
 		vec3 unit_direction = unit_vector(r.direction());
